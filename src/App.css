@@ -1,38 +1,132 @@
 .App {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.App .StretchKeyboard {
+  align-self: stretch;
+}
+
+.WinLose {
+  font-size: 2rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.HangmanDrawing {
+  position: relative;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.HangmanDrawing .BottomLine {
+  height: 10px;
+  width: 250px;
+  background: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.HangmanDrawing .VerticalLine {
+  height: 400px;
+  width: 10px;
+  background-color: black;
+  margin-left: 120px;
+}
+
+.HangmanDrawing .TopLine {
+  height: 10px;
+  width: 200px;
+  background-color: black;
+  margin-left: 120px;
+}
+
+.HangmanDrawing .SmallVerticalLine {
+  height: 50px;
+  width: 10px;
+  background-color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.HangmanDrawing .Head {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 10px solid black;
+  position: absolute;
+  top: 50px;
+  right: -30px;
+}
+
+.HangmanDrawing .Body {
+  width: 10px;
+  height: 100px;
+  background: black;
+  position: absolute;
+  top: 120px;
+  right: 0;
+}
+
+.HangmanDrawing .RightArm {
+  width: 100px;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  top: 150px;
+  right: -100px;
+  rotate: -30deg;
+  transform-origin: left bottom;
+}
+
+.HangmanDrawing .LeftArm {
+  width: 100px;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  top: 150px;
+  right: 10px;
+  rotate: 30deg;
+  transform-origin: right bottom;
+}
+
+.HangmanDrawing .RightLeg {
+  width: 100px;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  top: 210px;
+  right: -90px;
+  rotate: 60deg;
+  transform-origin: left bottom;
+}
+
+.HangmanDrawing .LeftLeg {
+  width: 100px;
+  height: 10px;
+  background-color: black;
+  position: absolute;
+  top: 210px;
+  right: 0;
+  rotate: -60deg;
+  transform-origin: right bottom;
+}
+
+.HangmanWord {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 0.25rem;
+  font-size: 6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: monospace;
 }
 
-.App-link {
-  color: #61dafb;
+.HangmanWord .Word {
+  border-bottom: 0.4rem solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Keyboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  gap: 0.5rem;
 }
